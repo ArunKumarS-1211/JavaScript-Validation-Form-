@@ -1,0 +1,66 @@
+<html>
+  <head><title>validation</title>
+  <style>
+     body{
+            background-image: url("1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%,100%;
+          }
+          div {
+              background-color:white;
+              width: 300px;
+              padding: 50px;
+              margin: 20px;
+            }
+  </style>
+  <script>
+  function myFunction()
+    {   
+      var x=document.forms["myForm"]["name"].value;
+      if(x == "")
+      {
+          alert("NAME IS REQUIRED");
+          return false;
+      }
+      var x =document.forms["myForm"]["name"].value;
+      var y =document.forms["myForm"]["no"].value;
+      var w=document.forms["myForm"]["email"].value;
+
+      if(document.getElementById("male").checked){
+        var z=document.forms["myForm"]["male"].value;
+      }
+      else {
+        var z=document.forms["myForm"]["female"].value;
+      }
+      var a=document.forms["myForm"]["course"].value;
+      document.getElementById("demo").innerHTML = "<b>YOUR DETAILS</b><br><br><b>NAME: </b>" +x+"<br> <b>MOBILE NO: </b>" +y+ 
+                                            "<br><b>EMAIL ID: </b>" +w+"<br><b>GENDER: </b>" +z+ "<br><b>COURSE OPTED: </b>" +a+"<br>";
+    }
+</script>
+</head>
+<body>
+<form name="myForm">        
+<center><br><br><br><br> 
+    
+    <h1>COURSE REGISTRATION FORM</h1><div><p id="demo">
+    NAME:<input type="text" name="name" id="name" maxlength="25"><br><br>
+    MOBILE NUMBER:<input type="number" name="no" onkeypress="if(this.value.length==10)return false" id="no"><br><br>
+    MAIL ID:<input type="email" id="email" name="email"><br><br>
+    Gender:
+    <input id="male" type="radio" value="MALE">MALE
+    <input id="female" type="radio" value="FEMALE">FEMALE<br><br>
+    COURSES:
+    <select name="course" id="course">
+        <option value="HTML">HTML</option>
+        <option value="JAVA">JAVA</option>
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="PYTHON">PYTHON</option>
+    </select><br><br>
+    <input type="submit" class="button" value="SUBMIT" onclick="myFunction()">
+    <input type="reset" class="button" value="CLEAR"> </p>
+    </div>
+    </center>   
+</form>
+</body>
+</html>
